@@ -1,0 +1,8 @@
+.profilepic{
+	background-image: url(/assets/images/user.png);
+	height: 180px;
+	
+}
+.profilepicbg{
+	background-color: red;
+}

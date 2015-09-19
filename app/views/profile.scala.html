@@ -1,0 +1,465 @@
+@(localUser: models.User = null)
+
+
+@import com.feth.play.module.pa.views.html._
+@import helper._
+@import helper.twitterBootstrap._
+@import be.objectify.deadbolt.java.views.html._
+
+@main(Messages("playauthenticate.profile.title"),"profile") {
+<br><br>
+	<div class="row"><br></div>
+   	<div class="row">
+    <div class="col-sm-8" style="background-color:color:lavenderblush;" >
+    	 <div class="box box-success">
+                <div class="box-header">
+                  <div class="row">
+                  	<div class="col-sm-4 fa profilepic">
+                  		<a href="#" data-toggle="modal" data-target="#myModal">
+                  		<div class="container">
+						 <h2><i class="fa fa-camera"></i>Add Picture</h2>
+						  <!-- Trigger the modal with a button -->
+						 
+						</div>
+						</a>
+                  	</div>
+                  	<div class="col-sm-8" style="background-color:color:lavenderblush;">
+                  		<div><h3>@localUser.name   - @localUser.getRate.getRate()  @localUser.getRate.getCurrency() </h3> </div>
+                  		<div><h4>Edit headlineSoftware Developer at IT Intelligence</h4></div>
+                  		<div>Country | Specialist</div>
+                  		<div><a>Add Experience</a></div>
+                  		<div><a>Add Education</a></div>
+                  		<div><button class="btn  btn-success">View Profile</button></div>
+                  		
+                  	</div>
+                  </div>
+                </div><!-- /.box-header -->
+                <!-- form start -->
+                </div><!-- /.box -->
+                
+                <!-- widget -->
+                 <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>Eduction</h3>
+                  <p>Members with a school on their profile get 7 times more profile views</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-shopping-cart"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                  Add Now <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>Experience<sup style="font-size: 20px"></sup></h3>
+                  <p>Members with a school on their profile get 7 times more profile views</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                  Add Now <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>Contact</h3>
+                  <p>Members with a school on their profile get 7 times more profile views</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                  Add Now <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>Chembers</h3>
+                  <p>Members with a school on their profile get 7 times more profile views</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="#" class="small-box-footer">
+                  Add Now <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div><!-- ./col -->
+          </div><!-- /.row -->
+
+          <!-- =========================================================== -->
+    	
+    </div>
+    <div class="col-sm-4">
+  		 <div class="col-sm-12">
+              <div class="box box-danger collapsed-box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Add Your Rate</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <form action="@routes.Application.addRate()" method="post">
+                  	
+                  		Rate<br>
+                  		<input type="number" name="rate" value="@localUser.getRate.getRate()"/>
+                  
+                  		<br>Currency<br>
+                  		<select name="currency">
+    <option selected="selected" value="@localUser.getRate.getCurrency()">
+        @localUser.getRate.getCurrency()
+    </option>
+    <option>
+        EUR Euro
+    </option>
+    <option value="CAD Canada Dollars">
+        CAD Canada Dollars
+    </option>
+    <option>
+        GBP United Kingdom Pounds
+    </option>
+    <option>
+        DEM Germany Deutsche Marks
+    </option>
+    <option>
+        FRF France Francs
+    </option>
+    <option>
+        JPY Japan Yen
+    </option>
+    <option>
+        NLG Netherlands Guilders
+    </option>
+    <option>
+        ITL Italy Lira
+    </option>
+    <option>
+        CHF Switzerland Francs
+    </option>
+    <option>
+        DZD Algeria Dinars
+    </option>
+    <option>
+        ARP Argentina Pesos
+    </option>
+    <option>
+        AUD Australia Dollars
+    </option>
+    <option>
+        ATS Austria Schillings
+    </option>
+    <option>
+        BSD Bahamas Dollars
+    </option>
+    <option>
+        BBD Barbados Dollars
+    </option>
+    <option>
+        BEF Belgium Francs
+    </option>
+    <option>
+        BMD Bermuda Dollars
+    </option>
+    <option>
+        BRR Brazil Real
+    </option>
+    <option>
+        BGL Bulgaria Lev
+    </option>
+    <option>
+        CAD Canada Dollars
+    </option>
+    <option>
+        CLP Chile Pesos
+    </option>
+    <option>
+        CNY China Yuan Renmimbi
+    </option>
+    <option>
+        CYP Cyprus Pounds
+    </option>
+    <option>
+        CSK Czech Republic Koruna
+    </option>
+    <option>
+        DKK Denmark Kroner
+    </option>
+    <option>
+        NLG Dutch Guilders
+    </option>
+    <option>
+        XCD Eastern Caribbean Dollars
+    </option>
+    <option>
+        EGP Egypt Pounds
+    </option>
+    <option>
+        EUR Euro
+    </option>
+    <option>
+        FJD Fiji Dollars
+    </option>
+    <option>
+        FIM Finland Markka
+    </option>
+    <option>
+        FRF France Francs
+    </option>
+    <option>
+        DEM Germany Deutsche Marks
+    </option>
+    <option>
+        XAU Gold Ounces
+    </option>
+    <option>
+        GRD Greece Drachmas
+    </option>
+    <option>
+        HKD Hong Kong Dollars
+    </option>
+    <option>
+        HUF Hungary Forint
+    </option>
+    <option>
+        ISK Iceland Krona
+    </option>
+    <option>
+        INR India Rupees
+    </option>
+    <option>
+        IDR Indonesia Rupiah
+    </option>
+    <option>
+        IEP Ireland Punt
+    </option>
+    <option>
+        ILS Israel New Shekels
+    </option>
+    <option>
+        ITL Italy Lira
+    </option>
+    <option>
+        JMD Jamaica Dollars
+    </option>
+    <option>
+        JPY Japan Yen
+    </option>
+    <option>
+        JOD Jordan Dinar
+    </option>
+    <option>
+        KRW Korea (South) Won
+    </option>
+    <option>
+        LBP Lebanon Pounds
+    </option>
+    <option>
+        LUF Luxembourg Francs
+    </option>
+    <option>
+        MYR Malaysia Ringgit
+    </option>
+    <option>
+        MXP Mexico Pesos
+    </option>
+    <option>
+        NLG Netherlands Guilders
+    </option>
+    <option>
+        NZD New Zealand Dollars
+    </option>
+    <option>
+        NOK Norway Kroner
+    </option>
+    <option>
+        PKR Pakistan Rupees
+    </option>
+    <option>
+        XPD Palladium Ounces
+    </option>
+    <option>
+        PHP Philippines Pesos
+    </option>
+    <option>
+        XPT Platinum Ounces
+    </option>
+    <option>
+        PLZ Poland Zloty
+    </option>
+    <option>
+        PTE Portugal Escudo
+    </option>
+    <option>
+        ROL Romania Leu
+    </option>
+    <option>
+        RUR Russia Rubles
+    </option>
+    <option>
+        SAR Saudi Arabia Riyal
+    </option>
+    <option>
+        XAG Silver Ounces
+    </option>
+    <option>
+        SGD Singapore Dollars
+    </option>
+    <option>
+        SKK Slovakia Koruna
+    </option>
+    <option>
+        ZAR South Africa Rand
+    </option>
+    <option>
+        KRW South Korea Won
+    </option>
+    <option>
+        ESP Spain Pesetas
+    </option>
+    <option>
+        XDR Special Drawing Right (IMF)
+    </option>
+    <option>
+        SDD Sudan Dinar
+    </option>
+    <option>
+        SEK Sweden Krona
+    </option>
+    <option>
+        CHF Switzerland Francs
+    </option>
+    <option>
+        TWD Taiwan Dollars
+    </option>
+    <option>
+        THB Thailand Baht
+    </option>
+    <option>
+        TTD Trinidad and Tobago Dollars
+    </option>
+    <option>
+        TRL Turkey Lira
+    </option>
+    <option>
+        GBP United Kingdom Pounds
+    </option>
+    <option>
+        USD United States Dollars
+    </option>
+    <option>
+        VEB Venezuela Bolivar
+    </option>
+    <option>
+        ZMK Zambia Kwacha
+    </option>
+    <option>
+        EUR Euro
+    </option>
+    <option>
+        XCD Eastern Caribbean Dollars
+    </option>
+    <option>
+        XDR Special Drawing Right (IMF)
+    </option>
+    <option>
+        XAG Silver Ounces
+    </option>
+    <option>
+        XAU Gold Ounces
+    </option>
+    <option>
+        XPD Palladium Ounces
+    </option>
+    <option>
+        XPT Platinum Ounces
+    </option>
+</select>
+                  		<br><br>
+                  	<button>Add Rate</button>
+                  </form>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+             <!--  -->
+            <div class="col-sm-12">
+              <div class="box box-warning collapsed-box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Revisiting Rate</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  The body of the box
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+            
+             <!--  -->
+            <div class="col-sm-12">
+              <div class="box box-success collapsed-box">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Specialist</h3>
+                  <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                  </div><!-- /.box-tools -->
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  The body of the box
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div><!-- /.col -->
+           
+            
+            </div>
+           
+            
+           
+  	</div>
+  	
+  	<!-- Modal -->
+
+  
+    <div class="example-modal" >
+            <div class="modal modal-success" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Photo</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>Choose a Photo<br>
+You can upload a JPEG, GIF, or PNG file.&hellip;</p>
+ <div class="form-group">
+                      <label for="exampleInputFile">File input</label>
+                      <input type="file" id="exampleInputFile">
+                      <p class="help-block">File size limit is 8 MB.</p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+          </div><!-- /.example-modal -->
+          
+  }

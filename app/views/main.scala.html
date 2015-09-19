@@ -1,0 +1,137 @@
+@(title: String, nav: String = "")(content: Html)
+
+@import be.objectify.deadbolt.java.views.html._
+@import be.objectify.deadbolt.core.utils.TemplateUtils._
+
+<!DOCTYPE html>
+<html lang="@lang().code()">
+  <head>
+    <title>@title</title>
+
+    <!-- odplanet meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Authenticate - an authentication module for the Play! Framework 2.0">
+    <meta name="author" content="Shekhar Ullah">
+	<!-- odplanet meta End -->
+	<link type="image/png" href="@routes.Assets.at("img/glyphicons-halflings-white.png")">
+	<link type="image/png" href="@routes.Assets.at("img/glyphicons-halflings.png")">
+    <!-- odplanet scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="@routes.Application.jsRoutes" defer="defer"></script>
+	<script src="@routes.Assets.at("javascripts/jQuery-2.1.4.min.js")"></script>
+	<script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
+	<script src="@routes.Assets.at("javascripts/app.min.js")"></script>
+	<script src="@routes.Assets.at("javascripts/landingpage.js")"></script>
+	<script src="@routes.Assets.at("javascripts/creative.js")"></script>
+	  
+    <!-- Le styles -->
+    
+    <link href="@routes.Assets.at("css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/ionicons.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/AdminLTE.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/skin-green.min.css")" rel="stylesheet">
+   <link href="@routes.Assets.at("css/landingpage.css")" rel="stylesheet">
+   <link href="@routes.Assets.at("css/signup.css")" rel="stylesheet">
+ 
+    <link href="@routes.Assets.at("css/profile.css")" rel="stylesheet">
+	<link href="@routes.Assets.at("css/animate.min")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/creative.css")" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+ 	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+   <body>
+	  <nav class="navbar navbar-trans navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand text-danger" href="#">SMART SEO SERVICE</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+         @subjectPresentOr() {
+          	@defining(Application.getLocalUser(session())) { user =>
+            <li class="user-menu"> <a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            <!-- User Account Menu -->
+             <li class="dropdown user user-menu">
+                <!-- Menu Toggle Button -->
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- The user image in the navbar-->
+                  <i class="fa fa-user"></i>
+                  <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                  <span class="hidden-xs">@user.name</span>
+                </a>
+                }
+                <ul class="dropdown-menu">
+                  <!-- The user image in the menu -->
+                  
+                  <!-- Menu Body -->
+                  <li class="user-body">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="@routes.Application.profile()">@Messages("playauthenticate.navigation.profile")</a>
+                    </div>
+                    <div class="pull-right">
+                     <a href="@com.feth.play.module.pa.controllers.routes.Authenticate.logout()"><i class="icon-off"></i> @Messages("playauthenticate.navigation.logout")</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+          }{
+            <li><a href="@routes.Application.login()" class="btn btn-primary btn-mini @("disabled".when(nav == "login"))">@Messages("playauthenticate.navigation.login")</a></li>
+          }
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-left">
+            @subjectNotPresent(){
+                 <li class="@("active".when(nav == ""))"><a href="@routes.Application.index()">@Messages("playauthenticate.navigation.home")</a></li>
+                <li class="hidden-xs"><a href="#section2">Pricing</a></li>
+                <li><a href="#section3">Fund</a></li>
+                <li><a href="#section4">Orders</a></li>
+                <li><a href="#section5">Help</a></li>
+                }
+                @subjectNotPresent() {
+			    	<li class="@("active".when(nav == "signup"))"><a href="@routes.Application.signup()">@Messages("playauthenticate.navigation.signup")</a></li>
+			    }
+                
+                <li>&nbsp;</li>
+            </ul>
+           
+        </div>
+    </div>
+</nav>
+<div class="container">
+	    @if(flash.contains(Application.FLASH_ERROR_KEY)) {
+	      <div class="alert alert-error">
+	      	@flash().get(Application.FLASH_ERROR_KEY)
+	      </div>
+	    }
+	    @if(flash.contains(Application.FLASH_MESSAGE_KEY)) {
+	      <div class="alert alert-success">
+	      	@flash().get(Application.FLASH_MESSAGE_KEY)
+	      </div>
+	    }
+		@content
+</div>
+      <!-- /container -->
+       
+       
+</body>
