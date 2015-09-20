@@ -1,4 +1,4 @@
-Smart-SEO-Service
+Smart-SEO-Service <span style="color: green"> build passed</span>
 =================================
 
 This App is using PlayAuthenticate Plugins
