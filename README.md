@@ -1,12 +1,8 @@
-ODOCPLNET - Business Application
+Smart-SEO-Service
 =================================
 
 This App is using PlayAuthenticate Plugins
 
-PlayAuthenticate Java and Mongo Sample Application
-=================================
-
-This project is based on the [sample](https://github.com/joscha/play-authenticate/tree/master/samples/java/play-authenticate-usage) provided by the PlayAuthenticate authors but instead of PostreSQL it is using MongoDB as it's datastore.
 
 Plugins
 =======
@@ -19,7 +15,7 @@ Plugins
 
 Sample
 ======
-[http://play-authenticate-mongo.herokuapp.com](http://play-authenticate-mongo.herokuapp.com)
+https://smartseoservice.herokuapp.com/
 
 Usage
 =====

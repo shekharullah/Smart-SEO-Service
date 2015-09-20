@@ -7,6 +7,8 @@ GET     /                           controllers.Application.index()
 GET     /restricted                 controllers.Application.restricted()
 GET     /assets/javascript/routes.js    controllers.Application.jsRoutes()
 
+GET     /price                           controllers.Application.price()
+
 GET     /profile                    controllers.Application.profile()
 POST     /profile                    controllers.Application.addRate()
 

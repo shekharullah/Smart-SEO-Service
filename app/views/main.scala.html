@@ -42,6 +42,7 @@
     <link href="@routes.Assets.at("css/profile.css")" rel="stylesheet">
 	<link href="@routes.Assets.at("css/animate.min")" rel="stylesheet">
     <link href="@routes.Assets.at("css/creative.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("css/price.css")" rel="stylesheet">
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
  	<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
@@ -107,8 +108,11 @@
             
             <ul class="nav navbar-nav navbar-left">
             @subjectNotPresent(){
-                 <li class="@("active".when(nav == ""))"><a href="@routes.Application.index()">@Messages("playauthenticate.navigation.home")</a></li>
-                <li class="hidden-xs"><a href="#section2">Pricing</a></li>
+            	<li class="@("active".when(request.path == controllers.routes.Application.index().toString()))"><a href="@routes.Application.index()">Home</a></li>
+                 
+                <li class="@("active".when(request.path == controllers.routes.Application.price().toString()))">
+				  	<a href="@routes.Application.price()">Price</a>
+				</li>
                 <li><a href="#section3">Fund</a></li>
                 <li><a href="#section4">Orders</a></li>
                 <li><a href="#section5">Help</a></li>

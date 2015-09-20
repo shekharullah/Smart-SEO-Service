@@ -40,6 +40,10 @@ public class Application extends Controller {
 	public static Result index() {
 		return ok(index.render());
 	}
+	
+	public static Result price() {
+		return ok(price.render());
+	}
 
 	public static User getLocalUser(final Session session) {
 		final AuthUser currentAuthUser = PlayAuthenticate.getUser(session);
