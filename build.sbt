@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 libraryDependencies ++= Seq(
    "be.objectify" %% "deadbolt-java" % "2.3.3",
   "com.feth"      %% "play-authenticate" % "0.6.5-SNAPSHOT",
-  "org.mongodb" % "mongo-java-driver" % "2.12.2",
+  "org.mongodb" % "mongo-java-driver" % "2.13.1",
   "org.mongodb.morphia" % "morphia" % "0.108",
   "org.mongodb.morphia" % "morphia-logging-slf4j" % "0.108",
   "org.mongodb.morphia" % "morphia-validation" % "0.108",
